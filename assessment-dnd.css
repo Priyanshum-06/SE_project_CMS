@@ -1,0 +1,99 @@
+/* Drag and Drop Styles */
+.assessment-card {
+    cursor: grab;
+    transition: all 0.2s ease;
+  }
+  
+  .assessment-card:active {
+    cursor: grabbing;
+  }
+  
+  .assessment-card.dragging {
+    opacity: 0.5;
+    transform: scale(0.98);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assessment-card.drag-over {
+    border: 2px dashed #0086c9;
+  }
+  
+  .assessment-card.drop-before {
+    border-top: 2px solid #0086c9;
+    padding-top: 18px;
+  }
+  
+  .assessment-card.drop-after {
+    border-bottom: 2px solid #0086c9;
+    padding-bottom: 18px;
+  }
+  
+  .upcoming-section.external-drag-over {
+    background-color: #f0f7ff;
+    border: 2px dashed #0086c9;
+  }
+  
+  .clash-warning-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffe4e4;
+    color: #d34645;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Drag Handle */
+  .assessment-card::before {
+    content: "⋮⋮";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #85878d;
+    font-size: 16px;
+    opacity: 0.5;
+    cursor: grab;
+  }
+  
+  .assessment-card:hover::before {
+    opacity: 1;
+  }
+  
+  /* External Drop Zone Indicator */
+  .upcoming-section {
+    position: relative;
+  }
+  
+  .upcoming-section::after {
+    content: "Drop calendar events here";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0086c9;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .upcoming-section.external-drag-over::after {
+    opacity: 1;
+  }
+  

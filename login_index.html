@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="login()">Login</button>
+        <button type="button" class="toggle-btn" onclick="signup()">Signup</button>
+      </div>
+      
+      <!-- Login Form -->
+      <form id="login" class="input-group">
+        <input type="text" class="input-field" placeholder="Username" required>
+        <input type="password" class="input-field" placeholder="Enter Password" required>
+        <input type="checkbox" class="check-box"><span>Remember Password</span>
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+      
+      <!-- Signup Form -->
+      <form id="signup" class="input-group">
+        <input type="text" class="input-field" placeholder="Username" required>
+        <input type="email" class="input-field" placeholder="Email" required>
+        <input type="password" class="input-field" placeholder="Enter Password" required>
+        <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+        <button type="submit" class="submit-btn">Signup</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var loginForm = document.getElementById("login");
+    var signupForm = document.getElementById("signup");
+    var button = document.getElementById("btn");
+
+    function signup() {
+      loginForm.style.left = "-400px";
+      signupForm.style.left = "50px";
+      button.style.left = "110px";
+    }
+
+    function login() {
+      loginForm.style.left = "50px";
+      signupForm.style.left = "450px";
+      button.style.left = "0px";
+    }
+  </script>
+</body>
+</html>

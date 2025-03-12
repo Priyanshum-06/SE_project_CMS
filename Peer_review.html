@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="dashboard">
+      <div class="dashboard-container">
+        <nav class="sidebar">
+          <div class="logo">
+            <div class="logo-container">
+              <img
+                src="dashboardimg.svg"
+                alt="Dashboard Logo"
+                class="logo-image"
+              />
+              <h1 class="logo-text">DashBoard</h1>
+            </div>
+          </div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <img
+                src="Home.svg"
+                alt="Overview Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Overview</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="nav-text.svg"
+                alt="Courses Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Courses</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="course.svg"
+                alt="Lessons Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Lessons</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="Lesson.svg"
+                alt="ToDoList Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">ToDoList</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="Assessments.svg"
+                alt="Assessments Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Assessments</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="projec.svg"
+                alt="Project Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Project</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="mentormeeting.png"
+                alt="Mentor Meeting Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Mentor Meeting</span>
+            </li>
+            <li class="nav-item">
+              <img
+                src="setting.png"
+                alt="Settings Icon"
+                class="nav-icon"
+              />
+              <span class="nav-text">Settings</span>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="main-content">
+          <header class="content-header">
+            <div class="header-info">
+              <h2 class="header-title">Peer Review Assessment</h2>
+              <p class="header-description">
+                Evaluate your team members' performance and contribution
+              </p>
+            </div>
+            <div class="profile-link">Profile</div>
+          </header>
+
+          <article class="assessment-container">
+            <div class="assessment-content">
+              <h3 class="member-name">Alex Chen</h3>
+              <p class="member-role">Team Member</p>
+
+              <div class="rating-section">
+                <h4 class="rating-category">Performance Rating</h4>
+                <p class="rating-subcategory">Project Contribution</p>
+                <div class="rating-options">
+                  <button class="rating-option" data-value="1">Poor</button>
+                  <button class="rating-option" data-value="2">Fair</button>
+                  <button class="rating-option" data-value="3">Good</button>
+                  <button class="rating-option" data-value="4">Very Good</button>
+                  <button class="rating-option" data-value="5">Excellent</button>
+                </div>
+              </div>
+
+              <div class="rating-section">
+                <h4 class="rating-category">Communication Skills</h4>
+                <div class="rating-options">
+                  <button class="rating-option" data-value="1">Poor</button>
+                  <button class="rating-option" data-value="2">Fair</button>
+                  <button class="rating-option" data-value="3">Good</button>
+                  <button class="rating-option" data-value="4">Very Good</button>
+                  <button class="rating-option" data-value="5">Excellent</button>
+                </div>
+              </div>
+
+              <div class="rating-section">
+                <h4 class="rating-category">Teamwork</h4>
+                <div class="rating-options">
+                  <button class="rating-option" data-value="1">Poor</button>
+                  <button class="rating-option" data-value="2">Fair</button>
+                  <button class="rating-option" data-value="3">Good</button>
+                  <button class="rating-option" data-value="4">Very Good</button>
+                  <button class="rating-option" data-value="5">Excellent</button>
+                </div>
+              </div>
+
+              <div class="rating-section">
+                <h4 class="rating-category">Leadership Quality</h4>
+                <div class="rating-options">
+                  <button class="rating-option" data-value="1">Poor</button>
+                  <button class="rating-option" data-value="2">Fair</button>
+                  <button class="rating-option" data-value="3">Good</button>
+                  <button class="rating-option" data-value="4">Very Good</button>
+                  <button class="rating-option" data-value="5">Excellent</button>
+                </div>
+              </div>
+
+              <div class="feedback-section">
+                <h4 class="feedback-title">Additional Feedback</h4>
+                <textarea class="feedback-input" placeholder="Enter your feedback and suggestions here..."></textarea>
+                <button class="submit-feedback">Submit Review</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <aside class="right-sidebar">
+          <div class="user-profile">
+            <img
+              src="profile decoration.svg"
+              alt="Profile Decoration"
+              class="profile-decoration"
+            />
+            <img
+              src="profile photo.png"
+              alt="User Avatar"
+              class="user-avatar"
+            />
+            <h3 class="user-name">Anmol Chaturvedi</h3>
+            <p class="user-role">College Student</p>
+          </div>
+
+          <div class="calendar">
+            <div class="calendar-header">
+              <img
+                src="previous month.svg"
+                alt="Previous Month"
+                class="calendar-nav-arrow"
+              />
+              <h4 class="calendar-month">March 2025</h4>
+              <img
+                src="next month.svg"
+                alt="Next Month"
+                class="calendar-nav-arrow"
+              />
+            </div>
+
+            <div class="weekdays">
+              <span>M</span>
+              <span class="weekday-t">T</span>
+              <span>W</span>
+              <span>T</span>
+              <span>F</span>
+              <span>S</span>
+              <span>S</span>
+            </div>
+
+            <div class="calendar-highlight"></div>
+
+            <div class="calendar-days">
+              <div class="day-container">
+                <span class="day-number">15</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">16</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">17</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">18</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">19</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">20</span>
+              </div>
+              <div class="day-container">
+                <span class="day-number">21</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="task-list">
+            <div class="task-item">
+              <div class="task-checkbox"></div>
+              <div class="task-details">
+                <h4 class="task-title">Seminar/Case Study</h4>
+                <div class="task-meta">
+                  <span class="task-category">Programming</span>
+                  
+                  <span class="task-time">08:00 AM</span>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="task-title standalone">Transpose 2D array</h4>
+
+            <div class="subtask">
+              <div class="task-checkbox"></div>
+              <span class="subtask-title">Hashmaping</span>
+            </div>
+          </div>
+
+          <div class="task-list-additional">
+            <div class="task-item">
+              <div class="task-checkbox"></div>
+              <div class="task-details">
+                <h4 class="task-title">Mobile Application Development</h4>
+                <div class="task-meta">
+                  <span class="task-category">Programming</span>
+                  
+                  <span class="task-time">10:00 AM</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="task-item completed">
+              <img
+                src="completed task.png"
+                alt="Completed Task"
+                class="completed-checkbox"
+              />
+              <div class="task-details">
+                <h4 class="task-title">Report Analysis P2P Business</h4>
+                <div class="task-meta">
+                  <span class="task-category">Business</span>
+                  
+                  <span class="task-time">04:50 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule-section">
+            <h3 class="schedule-title">Schedule</h3>
+            <div class="schedule-items">
+              <div class="schedule-item">
+                <div class="schedule-checkbox"></div>
+                <div class="schedule-details">
+                  <h4>Seminar: Case Study</h4>
+                  <p>Programming • 08:30 AM</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-checkbox"></div>
+                <div class="schedule-details">
+                  <h4>Transpose 2D Array</h4>
+                  <p>HashMapping</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-checkbox"></div>
+                <div class="schedule-details">
+                  <h4>Mobile Application Development</h4>
+                  <p>Programming • 10:30 AM</p>
+                </div>
+              </div>
+              <div class="schedule-item completed">
+                <div class="schedule-checkbox checked"></div>
+                <div class="schedule-details">
+                  <h4>Report Analysis-B2B Business</h4>
+                  <p>Business • 04:45 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Link to stylesheets and scripts -->
+      <link rel="stylesheet" href="pr.css">
+      <script src="pr.js"></script>
+    </main>
+  </body>
+</html>

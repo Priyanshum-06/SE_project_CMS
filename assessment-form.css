@@ -1,0 +1,173 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #85878d;
+  }
+  
+  .assessment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  input,
+  select {
+    padding: 12px;
+    border: 1px solid #e7eae9;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .clash-warning {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: #ffe4e4;
+    border-radius: 8px;
+    color: #d34645;
+  }
+  
+  .clash-warning.hidden {
+    display: none;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .submit-button,
+  .cancel-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    background-color: #0086c9;
+    color: white;
+    border: none;
+  }
+  
+  .cancel-button {
+    background-color: #f8f8f8;
+    color: #85878d;
+    border: 1px solid #e7eae9;
+  }
+  
+  .import-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e7eae9;
+  }
+  
+  .import-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .import-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .import-button {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #e7eae9;
+    background-color: #fff;
+    text-align: left;
+  }
+  
+  .import-button.google {
+    color: #4285f4;
+  }
+  
+  .import-button.outlook {
+    color: #0078d4;
+  }
+  
+  .import-button.ics {
+    color: #85878d;
+  }
+  
+  @media (max-width: 640px) {
+    .modal-content {
+      margin: 16px;
+      padding: 16px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+    }
+  }
+  

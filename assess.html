@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assess</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="university-logo.svg" alt="University Logo">
+      </div>
+      <nav>
+        <ul>
+            <a href="index.html"><li><i class="fas fa-home"></i> Home</li></a>
+            <a href="assess.html"><li><i class="fas fa-file-alt"></i>Assess</li></a>
+            <a href="mentorship.html"><li><i class="fas fa-users"></i> Mentorship</li></a>
+            <li><i class="fas fa-chalkboard-teacher"></i> Teach</li>
+            <li><i class="fas fa-calendar-alt"></i> Schedule</li>
+            <li><i class="fas fa-cog"></i> Settings</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <div class="greeting">
+          <h2>Assessment</h2>
+          <p>Plan an assessment</p>
+        </div>
+        <div class="topbar-right">
+          <input type="text" placeholder="Search for Assessment..." />
+          <button class="icon-btn">🔔</button>
+          <button class="icon-btn">✏️</button>
+        </div>
+      </div>
+
+      <section class="assess-actions">
+        <h3>Assessment Details</h3>
+
+        <div class="form-section">
+          <form id="assessmentForm">
+            <div class="input-group">
+              <label for="title">Assessment Title *</label>
+              <input type="text" id="title" placeholder="e.g., Midterm Exam" required>
+            </div>
+            <br>
+            <div class="input-group">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" placeholder="e.g., Mathematics" required>
+            </div>
+            <br>
+            <div class="input-group">
+              <label for="date">Date *</label>
+              <input type="date" id="date" required>
+            </div>
+            <br>
+            <div class="input-group">
+              <label for="marks">Total Marks *</label>
+              <input type="number" id="marks" placeholder="e.g., 100" required>
+            </div>
+            <br>
+            <button type="submit" class="btn">Add Assessment</button>
+            <br>
+          </form>
+        </div>
+
+        <div class="assessment-list">
+          <h3>Scheduled Assessments</h3>
+          <ul id="assessmentList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <aside class="profile">
+      <div class="profile-card">
+        <img src="profile-pic.svg" alt="Profile">
+        <h3>Nishtha Phutela</h3>
+        <p>College Faculty ✅</p>
+      </div>
+      <div class="calendar">
+        <h4>March 2025</h4>
+        <div class="date-selector"><strong>16</strong> - Tuesday</div>
+      </div>
+      <div class="activities">
+        <h4>Upcoming Activities</h4>
+        <ul>
+          <li>☑ Meeting with VC - 08:00 AM</li>
+          <li>☑ Research Team - 02:40 PM</li>
+          <li>☑ Unishere Lead - 02:40 PM</li>
+          <li>✅ Report Analysis - 04:50 PM</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const form = document.getElementById('assessmentForm');
+    const list = document.getElementById('assessmentList');
+    const scheduledDates = {};
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const subject = document.getElementById('subject').value;
+      const date = document.getElementById('date').value;
+      const marks = document.getElementById('marks').value;
+
+      const count = scheduledDates[date] || 0;
+
+      if (count >= 2) {
+        alert("❌ Already 2 assessments scheduled on this date. Cannot schedule more.");
+        return;
+      }
+
+      if (count === 1) {
+        const confirmAdd = confirm("⚠️ One assessment is already scheduled on this date. Are you sure you want to add another?");
+        if (!confirmAdd) return;
+      }
+
+      // Add assessment to list
+      const li = document.createElement('li');
+      li.textContent = `${title} | ${subject} | ${date} | ${marks} Marks`;
+      list.appendChild(li);
+
+      // Update count
+      scheduledDates[date] = count + 1;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>

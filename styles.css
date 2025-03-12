@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Body overlay when sidebar is active */
+body.sidebar-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 990;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: white;
+    padding: 24px;
+    border-right: 1px solid #e9ecef;
+    height: 100vh;
+    position: fixed;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #6c757d;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #f1f3f5;
+}
+
+.nav-item.active {
+    background-color: #339af0;
+    color: white;
+}
+
+/* Profile Sidebar Modal */
+.profile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Changed from left to right */
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); /* Changed shadow direction */
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Changed from left to right */
+    border-left: 1px solid #e9ecef; /* Added border */
+}
+
+.profile-sidebar.active {
+    right: 0; /* Changed from left to right */
+}
+
+.profile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f8f9fa; /* Added background color */
+}
+
+.profile-sidebar-header h2 {
+    font-size: 24px;
+    color: #212529;
+    font-weight: 600;
+}
+
+.close-profile {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #6c757d;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.close-profile:hover {
+    background-color: #e9ecef;
+}
+
+.profile-sidebar-content {
+    padding: 24px;
+    overflow-y: auto;
+    height: calc(100% - 80px);
+}
+
+.profile-info {
+    margin: 24px 0;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.info-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-label {
+    display: block;
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #212529;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edit-profile-btn, .logout-btn {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.edit-profile-btn {
+    background-color: #339af0;
+    color: white;
+}
+
+.edit-profile-btn:hover {
+    background-color: #228be6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(34, 139, 230, 0.2);
+}
+
+.logout-btn {
+    background-color: #f8f9fa;
+    color: #ff6b6b;
+    border: 1px solid #dee2e6;
+}
+
+.logout-btn:hover {
+    background-color: #fff0f0;
+    color: #fa5252;
+    border-color: #ffc9c9;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 280px;
+    padding: 32px;
+    flex: 1;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.user-greeting {
+    margin-bottom: 8px;
+}
+
+.user-name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 4px;
+}
+
+.greeting-text {
+    color: #6c757d;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    padding: 12px 16px;
+    padding-left: 40px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 12px;
+}
+
+/* Profile link styling improvement */
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #212529;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.profile-link:hover {
+    background-color: #339af0;
+    color: white;
+    border-color: #339af0;
+}
+
+.profile-link:hover svg {
+    stroke: white;
+}
+
+.profile-link svg {
+    transition: all 0.2s ease;
+}
+
+/* Stats Cards */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-title {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-eye { background-color: #339af0; }
+.icon-check { background-color: #51cf66; }
+.icon-info { background-color: #ff6b6b; }
+.icon-calendar { background-color: #845ef7; }
+
+/* Tabs */
+.tabs-container {
+    margin-bottom: 32px;
+}
+
+.tabs {
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 16px;
+}
+
+.tab {
+    color: #6c757d;
+    cursor: pointer;
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+    font-weight: 500;
+}
+
+.tab.active {
+    color: #339af0;
+    border-bottom: 2px solid #339af0;
+}
+
+/* Learning Portal */
+.learning-portal {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.portal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 8px;
+}
+
+.portal-description {
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+
+.see-more {
+    color: #339af0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Two Column Layout */
+.two-column {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/* Faculty Table */
+.faculty-section {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 16px;
+}
+
+.faculty-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.faculty-table th {
+    text-align: left;
+    padding: 12px;
+    color: #6c757d;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.faculty-table td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.faculty-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faculty-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Right Column */
+.right-column > * {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+/* User Profile */
+.user-profile {
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.profile-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.verified-badge {
+    color: #51cf66;
+}
+
+.profile-role {
+    color: #6c757d;
+}
+
+/* Calendar */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.calendar-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.calendar-nav-btn {
+    background: none;
+    border: 1px solid #dee2e6;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day-header {
+    text-align: center;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 8px;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #f1f3f5;
+}
+
+.calendar-day.today {
+    background-color: #339af0;
+    color: white;
+}
+
+/* Events */
+.event-item {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-title {
+    font-weight: 500;
+    color: #212529;
+    margin-bottom: 4px;
+}
+
+.event-category {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.event-time {
+    color: #adb5bd;
+    font-size: 14px;
+}

@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Your Mentor</title>
+    <link rel="stylesheet" href="mentor_meet.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>      
+    <!-- x-data="{ sidebarOpen: false }"> -->
+    <div
+      x-show="sidebarOpen"
+      @click="sidebarOpen = false"
+      class="sidebar-backdrop"
+    ></div>
+    <aside class="sidebar" :class="{ 'active': sidebarOpen }">
+      <div class="sidebar-header">
+        <img src="https://placehold.co/40x40" alt="Logo" class="logo" />
+        <h2 class="sidebar-title">Student Dashboard</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            />
+          </svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-item active">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+          Find Mentors
+        </a>
+        <a href="#" class="nav-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+          My Schedule
+        </a>
+        <a href="#" class="nav-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+          Profile
+        </a>
+        <a href="#" class="nav-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <img
+            src="https://placehold.co/32x32"
+            alt="User"
+            class="user-avatar"
+          />
+          <!-- <div class="user-info">
+            <p class="user-name">John Doe</p>
+            <p class="user-email">john@example.com</p>
+          </div> -->
+        </div>
+      </div>
+    </aside> 
+
+    <main
+      x-data="{
+        mentors: [
+            {
+                id: 1,
+                name: 'Dr. Nistha Phutela',
+                department: 'Computer Science',
+                expertise: 'Software Engineering, Database Management System,  ',
+                availability: 'Mon, Wed, Fri',
+                image: 'https://static.vecteezy.com/system/resources/previews/035/162/541/non_2x/ai-generated-3d-baby-girl-beautifull-photo.jpg',
+                status: 'Available',
+                rating: 4.9,
+                totalMeetings: 234
+            },
+            {
+                id: 2,
+                name: 'Prof. Anantha Rao',
+                department: 'Engineering',
+                expertise: 'Machine Learning, Data Science, AI',
+                availability: 'Tue, Thu',
+                image: 'https://img.freepik.com/premium-vector/boy-cartoon_487647-251.jpg',
+                status: 'In Meeting',
+                rating: 4.8,
+                totalMeetings: 189
+            },
+            {
+                id: 3,
+                name: 'Dr. Shilpa Mahajan',
+                department: 'Mathematics',
+                expertise: 'Statistical Analysis, Number Theory',
+                availability: 'Mon, Thu, Fri',
+                image: 'https://png.pngtree.com/background/20250105/original/pngtree-beautiful-animated-wallpaper-images-of-high-school-girls-picture-image_15587269.jpg',
+                status: 'Available',
+                rating: 4.7,
+                totalMeetings: 156
+            },
+            {
+                id: 4,
+                name: 'Prof. Satyendra Singh',
+                department: 'Computer Science',
+                expertise: 'Software Architecture, Cloud Computing',
+                availability: 'Wed, Thu, Fri',
+                image: 'https://static.vecteezy.com/system/resources/previews/028/794/707/non_2x/cartoon-cute-school-boy-photo.jpg',
+                status: 'Available',
+                rating: 4.9,
+                totalMeetings: 278
+            }
+        ],
+        selectedMentor: null,
+        showModal: false,
+        searchQuery: '',
+        activeTab: 'all',
+        meetingDetails: {
+            date: '',
+            time: '',
+            topic: '',
+            mode: 'in-person'
+        },
+        submitMeeting() {
+            if(!this.meetingDetails.date || !this.meetingDetails.time || !this.meetingDetails.topic) {
+                alert('Please fill all fields');
+                return;
+            }
+            this.showModal = false;
+            this.meetingDetails = {
+                date: '',
+                time: '',
+                topic: '',
+                mode: 'in-person'
+            };
+            alert('Meeting request sent successfully!');
+        },
+        filteredMentors() {
+            let filtered = this.mentors;
+            if(this.searchQuery) {
+                filtered = filtered.filter(mentor =>
+                    mentor.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    mentor.department.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    mentor.expertise.toLowerCase().includes(this.searchQuery.toLowerCase())
+                );
+            }
+            if(this.activeTab === 'available') {
+                filtered = filtered.filter(mentor => mentor.status === 'Available');
+            }
+            return filtered;
+        }
+    }"
+      class="app-container"
+    >
+      <div class="content-wrapper">
+        <header class="header">
+          <div class="header-content">
+            <h1 class="main-title">Find Your Mentor</h1>
+            <p class="subtitle">
+              Schedule face-to-face meetings with expert faculty members
+            </p>
+          </div>
+          <div class="header-controls">
+            <div class="search-container">
+              <input
+                type="text"
+                x-model="searchQuery"
+                placeholder="Search mentors..."
+                class="search-input"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="search-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+            <div class="filter-buttons">
+              <button
+                x-on:click="activeTab = 'all'"
+                x-bind:class="{ 'active': activeTab === 'all' }"
+                class="filter-btn"
+              >
+                All Mentors
+              </button>
+              <button
+                x-on:click="activeTab = 'available'"
+                x-bind:class="{ 'active': activeTab === 'available' }"
+                class="filter-btn"
+              >
+                Available Now
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <section class="mentors-grid">
+          <template x-for="mentor in filteredMentors()" :key="mentor.id">
+            <article class="mentor-card">
+              <div class="mentor-header">
+                <img
+                  :src="mentor.image"
+                  :alt="mentor.name"
+                  class="mentor-image"
+                />
+                <div
+                  class="mentor-status"
+                  x-bind:class="{ 'available': mentor.status === 'Available' }"
+                >
+                  <span x-text="mentor.status"></span>
+                </div>
+              </div>
+              <div class="mentor-info">
+                <h2 class="mentor-name" x-text="mentor.name"></h2>
+                <p class="mentor-department" x-text="mentor.department"></p>
+                <p class="mentor-expertise" x-text="mentor.expertise"></p>
+                <div class="mentor-stats">
+                  <div class="stat">
+                    <span class="stat-value" x-text="mentor.rating"></span>
+                    <span class="stat-label">Rating</span>
+                  </div>
+                  <div class="stat">
+                    <span
+                      class="stat-value"
+                      x-text="mentor.totalMeetings"
+                    ></span>
+                    <span class="stat-label">Meetings</span>
+                  </div>
+                </div>
+                <p class="mentor-availability">
+                  Available: <span x-text="mentor.availability"></span>
+                </p>
+                <button
+                  class="schedule-btn"
+                  @click="selectedMentor = mentor; showModal = true"
+                >
+                  Schedule Meeting
+                </button>
+              </div>
+            </article>
+          </template>
+        </section>
+      </div>
+
+      <!-- Modal -->
+      <div
+        x-show="showModal"
+        class="modal-overlay"
+        @click.self="showModal = false"
+      >
+        <div class="modal-content">
+          <header class="modal-header">
+            <div>
+              <h2 class="modal-title">Schedule Meeting</h2>
+              <p class="modal-subtitle">
+                with
+                <span
+                  x-text="selectedMentor?.name"
+                  class="mentor-highlight"
+                ></span>
+              </p>
+            </div>
+            <button @click="showModal = false" class="close-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </header>
+
+          <form class="meeting-form" @submit.prevent="submitMeeting()">
+            <div class="form-group">
+              <label>Meeting Mode</label>
+              <div class="mode-buttons">
+                <button
+                  type="button"
+                  @click="meetingDetails.mode = 'in-person'"
+                  x-bind:class="{ 'active': meetingDetails.mode === 'in-person' }"
+                >
+                  In Person
+                </button>
+                <button
+                  type="button"
+                  @click="meetingDetails.mode = 'virtual'"
+                  x-bind:class="{ 'active': meetingDetails.mode === 'virtual' }"
+                >
+                  Virtual
+                </button>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input
+                  type="date"
+                  id="date"
+                  x-model="meetingDetails.date"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="time">Time</label>
+                <input
+                  type="time"
+                  id="time"
+                  x-model="meetingDetails.time"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="topic">Discussion Topic</label>
+              <textarea
+                id="topic"
+                x-model="meetingDetails.topic"
+                placeholder="What would you like to discuss in the meeting?"
+                required
+              ></textarea>
+            </div>
+
+            <div class="modal-actions">
+              <button
+                type="button"
+                @click="showModal = false"
+                class="cancel-btn"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="submit-btn">Submit Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

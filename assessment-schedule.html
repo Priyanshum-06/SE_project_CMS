@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assessment-sche.css">
+    <link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<main class="assessment-container">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="title">Assessment Schedule</h1>
+      <p class="subtitle">View and manage your upcoming assessments</p>
+    </div>
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search assessments..."
+        class="search-input"
+        aria-label="Search assessments"
+      />
+      <svg
+        class="search-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+          stroke="#85878D"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+  </header>
+
+  <div class="content">
+    <section class="upcoming-section">
+      <h2 class="section-title">Upcoming Assessments</h2>
+
+      <article class="assessment-card">
+        <header class="assessment-header">
+          <div class="assessment-info">
+            <h3 class="assessment-title">Data Structures</h3>
+            <p class="assessment-subject">Computer Science</p>
+          </div>
+          <div class="time-clash">
+            <svg
+              class="warning-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_762)">
+                <path
+                  d="M7.99967 6.00016V9.3335M7.99967 11.6668V12.0002M7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668Z"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_367_762">
+                  <rect width="16" height="16" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+            <span>Time Clash</span>
+          </div>
+        </header>
+        <div class="assessment-details">
+          <div class="detail-item">
+            <svg
+              class="calendar-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33333 1.3335V3.3335M10.6667 1.3335V3.3335M2.33333 6.06016H13.6667M14 5.66683V11.3335C14 13.3335 13 14.6668 10.6667 14.6668H5.33333C3 14.6668 2 13.3335 2 11.3335V5.66683C2 3.66683 3 2.3335 5.33333 2.3335H10.6667C13 2.3335 14 3.66683 14 5.66683Z"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>2024-03-15</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="time-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_768)">
+                <path
+                  d="M7.99967 4.00016V8.00016L10.6663 9.3335M14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016Z"
+                  stroke="#85878D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <span>10:00 AM</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="duration-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99951 5.33333V8L9.33285 9.33333M2.03613 7.33333H4.66618M11.3328 7.33333H13.9629M7.33285 2.03662V4.66667M7.33285 11.3333V13.9634"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>1h</span>
+          </div>
+          <div class="tag tag-quiz">Quiz</div>
+        </div>
+      </article>
+
+      <article class="assessment-card">
+        <header class="assessment-header">
+          <div class="assessment-info">
+            <h3 class="assessment-title">Database Design</h3>
+            <p class="assessment-subject">Database</p>
+          </div>
+          <div class="time-clash">
+            <svg
+              class="warning-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_780)">
+                <path
+                  d="M7.99967 6.00016V9.3335M7.99967 11.6668V12.0002M7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668Z"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+            </svg>
+            <span>Time Clash</span>
+          </div>
+        </header>
+        <div class="assessment-details">
+          <div class="detail-item">
+            <svg
+              class="calendar-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33333 1.3335V3.3335M10.6667 1.3335V3.3335M2.33333 6.06016H13.6667M14 5.66683V11.3335C14 13.3335 13 14.6668 10.6667 14.6668H5.33333C3 14.6668 2 13.3335 2 11.3335V5.66683C2 3.66683 3 2.3335 5.33333 2.3335H10.6667C13 2.3335 14 3.66683 14 5.66683Z"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>2024-03-15</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="time-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_786)">
+                <path
+                  d="M7.99967 4.00016V8.00016L10.6663 9.3335M14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016Z"
+                  stroke="#85878D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <span>10:30 AM</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="duration-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99951 5.33333V8L9.33285 9.33333M2.03613 7.33333H4.66618M11.3328 7.33333H13.9629M7.33285 2.03662V4.66667M7.33285 11.3333V13.9634"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>2h</span>
+          </div>
+          <div class="tag tag-assignment">Assignment</div>
+        </div>
+      </article>
+
+      <article class="assessment-card">
+        <header class="assessment-header">
+          <div class="assessment-info">
+            <h3 class="assessment-title">Network Security</h3>
+            <p class="assessment-subject">Cybersecurity</p>
+          </div>
+        </header>
+        <div class="assessment-details">
+          <div class="detail-item">
+            <svg
+              class="calendar-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33333 1.3335V3.3335M10.6667 1.3335V3.3335M2.33333 6.06016H13.6667M14 5.66683V11.3335C14 13.3335 13 14.6668 10.6667 14.6668H5.33333C3 14.6668 2 13.3335 2 11.3335V5.66683C2 3.66683 3 2.3335 5.33333 2.3335H10.6667C13 2.3335 14 3.66683 14 5.66683Z"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>2024-03-20</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="time-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_800)">
+                <path
+                  d="M7.99967 4.00016V8.00016L10.6663 9.3335M14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016Z"
+                  stroke="#85878D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <span>2:00 PM</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="duration-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99951 5.33333V8L9.33285 9.33333M2.03613 7.33333H4.66618M11.3328 7.33333H13.9629M7.33285 2.03662V4.66667M7.33285 11.3333V13.9634"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>1.5h</span>
+          </div>
+          <div class="tag tag-test">Test</div>
+        </div>
+      </article>
+
+      <article class="assessment-card">
+        <header class="assessment-header">
+          <div class="assessment-info">
+            <h3 class="assessment-title">Web Development</h3>
+            <p class="assessment-subject">Programming</p>
+          </div>
+        </header>
+        <div class="assessment-details">
+          <div class="detail-item">
+            <svg
+              class="calendar-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33333 1.3335V3.3335M10.6667 1.3335V3.3335M2.33333 6.06016H13.6667M14 5.66683V11.3335C14 13.3335 13 14.6668 10.6667 14.6668H5.33333C3 14.6668 2 13.3335 2 11.3335V5.66683C2 3.66683 3 2.3335 5.33333 2.3335H10.6667C13 2.3335 14 3.66683 14 5.66683Z"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>2024-03-25</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="time-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_367_814)">
+                <path
+                  d="M7.99967 4.00016V8.00016L10.6663 9.3335M14.6663 8.00016C14.6663 11.682 11.6815 14.6668 7.99967 14.6668C4.31777 14.6668 1.33301 11.682 1.33301 8.00016C1.33301 4.31826 4.31777 1.3335 7.99967 1.3335C11.6815 1.3335 14.6663 4.31826 14.6663 8.00016Z"
+                  stroke="#85878D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <span>11:00 AM</span>
+          </div>
+          <div class="detail-item">
+            <svg
+              class="duration-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99951 5.33333V8L9.33285 9.33333M2.03613 7.33333H4.66618M11.3328 7.33333H13.9629M7.33285 2.03662V4.66667M7.33285 11.3333V13.9634"
+                stroke="#85878D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span>3h</span>
+          </div>
+          <div class="tag tag-project">Project</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="calendar-section">
+      <h2 class="section-title">Calendar View</h2>
+      <div class="calendar">
+        <div class="calendar-header">
+          <div class="weekday">Sun</div>
+          <div class="weekday">Mon</div>
+          <div class="weekday">Tue</div>
+          <div class="weekday">Wed</div>
+          <div class="weekday">Thu</div>
+          <div class="weekday">Fri</div>
+          <div class="weekday">Sat</div>
+        </div>
+        <div class="calendar-grid">
+          <div class="calendar-day">1</div>
+          <div class="calendar-day">2</div>
+          <div class="calendar-day">3</div>
+          <div class="calendar-day">4</div>
+          <div class="calendar-day">5</div>
+          <div class="calendar-day">6</div>
+          <div class="calendar-day">7</div>
+          <div class="calendar-day">8</div>
+          <div class="calendar-day">9</div>
+          <div class="calendar-day">10</div>
+          <div class="calendar-day">11</div>
+          <div class="calendar-day">12</div>
+          <div class="calendar-day">13</div>
+          <div class="calendar-day">14</div>
+          <div class="calendar-day calendar-day-highlight-red">15</div>
+          <div class="calendar-day">16</div>
+          <div class="calendar-day">17</div>
+          <div class="calendar-day">18</div>
+          <div class="calendar-day">19</div>
+          <div class="calendar-day calendar-day-highlight-blue">20</div>
+          <div class="calendar-day">21</div>
+          <div class="calendar-day">22</div>
+          <div class="calendar-day">23</div>
+          <div class="calendar-day">24</div>
+          <div class="calendar-day calendar-day-highlight-blue">25</div>
+          <div class="calendar-day">26</div>
+          <div class="calendar-day">27</div>
+          <div class="calendar-day">28</div>
+          <div class="calendar-day">29</div>
+          <div class="calendar-day">30</div>
+          <div class="calendar-day">31</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="assessment-clash.js"></script>
+<script src="assessment-realtime.js"></script>
+<script src="assessment-dnd.js"></script>
+<link rel="stylesheet" href="assessment-form.css" />
+<link rel="stylesheet" href="assessment-dnd.css" />
+<script src="assessment-search.js"></script>
+<script src="advanced-search.js"></script>
+<link rel="stylesheet" href="advanced-search.css" />
+<!-- <button
+  class="add-assessment-button"
+  onclick="document.getElementById('assessmentModal').style.display='flex'"
+>
+  Add Assessment
+</button> -->
+
+</body>
+</html>
