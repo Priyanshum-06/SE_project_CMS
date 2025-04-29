@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Students and Courses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h1 class="logo">📚 DashBoard</h1>
+    <nav class="nav">
+      <a href="#" onclick="showSection('students')">🏠 Overview</a>
+      <a href="#" onclick="showSection('courses')">📄 Courses</a>
+      <a href="#">✅ Approvals</a>
+      <a href="#">📊 Report</a>
+      <a href="#">🏫 Classrooms</a>
+      <a href="#" class="active">🧑‍🎓 Students</a>
+      <a href="#">🎓 Certification</a>
+      <a href="#">🏢 Department</a>
+      <a href="#">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  Main Content
+  <main class="main-content">
+    Students Section
+    <section id="studentsSection">
+      <div class="header">
+        <h2>🧑‍🎓 Students</h2>
+        <div class="actions">
+          <input type="text" id="searchInput" placeholder="Search students...">
+          <button class="primary-btn" onclick="enrollStudent()">+ Enroll New Student</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button>Assign Mentor</button>
+        <button>Approve Leave Request</button>
+        <button>Assign Course</button>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <h3>No students found</h3>
+        <p>Enroll new students to get started</p>
+        <button class="primary-btn" onclick="enrollStudent()">Enroll New Student</button>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="coursesSection" style="display:none;">
+      <div class="header">
+        <h2>📚 Courses</h2>
+        <div class="actions">
+          <input type="text" id="courseName" placeholder="Enter course name...">
+          <button class="primary-btn" onclick="addCourse()">+ Add Course</button>
+        </div>
+      </div>
+
+      <div class="courses-list" id="coursesList">
+        <!-- Dynamic Course Items -->
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
